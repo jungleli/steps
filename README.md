@@ -164,6 +164,6 @@ router.get('/', function(req, res, next) {
 ## 参考资料
 -------------
 
-[nodejs](https://nodejs.org/en/)
-[npm](https://www.npmjs.com/)
-[Express](http://www.expressjs.com.cn/4x/api.html#res)
+1. [nodejs](https://nodejs.org/en/)
+2. [npm](https://www.npmjs.com/)
+3. [Express](http://www.expressjs.com.cn/4x/api.html#res)
