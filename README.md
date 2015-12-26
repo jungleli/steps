@@ -73,10 +73,10 @@ Used for demo.
 	//删除<p>Welcome to <%= title %></p>	
 	//添加以下代码，表单提交，实现增加一条记录的功能
 		<form action='/add' method="post">
-			<label for="title">title:</label>
-			<input type="text" name="title">
-			<label for="url">url:</label>
-			<input type="text" name="url">
+			<label for="content">slogan:</label>
+			<input type="text" name="content">
+			<label for="name">author:</label>
+			<input type="text" name="author">
 			<input type="submit">
 		</form>
 	```
@@ -88,11 +88,11 @@ Used for demo.
 	```
 	
 	var monk = require('monk');
-   var db = monk('localhost:27017/demo');
+   var db = monk('10.129.100.80:27017/demo');
    
 	router.post('/add', function(req, res){
 	var newItem = req.body;
-	var collection = db.get("bookmarks");
+	var collection = db.get("slogan");
 	collection.insert(newItem, function(err){
 		if(err){
 			res.send(err);
@@ -109,10 +109,10 @@ Used for demo.
 	```
 		<ul>
 			<% items.forEach(function(item){%>
-			<li>
-				<a href="<%= item.url %>" rel="<%= item._id %>"> 
-				<%= item.title %></a>
-			</li>
+				<li>
+					<em><%= item.content %></em>
+					------- by <%= item.author %>
+				</li>
 			<%})%>
 		</ul>
 	```
@@ -120,13 +120,13 @@ Used for demo.
 
   	```
 router.get('/', function(req, res, next) {
-	var collection = db.get("bookmarks");
+	var collection = db.get("slogan");
 	collection.find({},{}, function(err, result){
 		if(err){
 			res.send(err);
 		}else{
 			res.render('index', 
-				{title: 'Bookmarks List', items: result});
+				{title: 'Say Hello to 思沃大讲堂', items: result});
 		}
 	});
 	```
