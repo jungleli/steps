@@ -131,16 +131,15 @@ router.get('/', function(req, res, next) {
 ## 进阶（rest篇&&Debug）
 -------------
 1.  直接演示， 使用postman测试接口
+
 	```
-	//删除<p>Welcome to <%= title %></p>	
-	//添加以下代码，表单提交，实现增加一条记录的功能
-		<form action='/add' method="post">
-			<label for="title">title:</label>
-			<input type="text" name="title">
-			<label for="url">url:</label>
-			<input type="text" name="url">
-			<input type="submit">
-		</form>
+	post:
+	http://localhost:3000/rest/add 
+	delete:
+	http://localhost:3000/rest/delete/:id 
+	get: 
+	http://localhost:3000/rest/list
+	
 	```
 
  
@@ -161,3 +160,10 @@ router.get('/', function(req, res, next) {
 	```
 	http://127.0.0.1:8080/?ws=127.0.0.1:8080&port=5858 
 	```
+
+## 参考资料
+-------------
+
+[nodejs](https://nodejs.org/en/)
+[npm](https://www.npmjs.com/)
+[Express](http://www.expressjs.com.cn/4x/api.html#res)
