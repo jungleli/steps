@@ -74,9 +74,9 @@ Used for demo.
 	//添加以下代码，表单提交，实现增加一条记录的功能
 		<form action='/add' method="post">
 			<label for="content">slogan:</label>
-			<input type="text" name="content">
+			<input type="text" name="content" required>
 			<label for="name">author:</label>
-			<input type="text" name="author">
+			<input type="text" name="author" required>
 			<input type="submit">
 		</form>
 	```
@@ -110,8 +110,10 @@ Used for demo.
 		<ul>
 			<% items.forEach(function(item){%>
 				<li>
-					<em><%= item.content %></em>
-					------- by <%= item.author %>
+					<%= item.content %>
+					<em>
+						------- by <%= item.author %>
+					</em>
 				</li>
 			<%})%>
 		</ul>
